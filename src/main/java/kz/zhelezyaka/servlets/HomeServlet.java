@@ -1,4 +1,4 @@
-package kz.zhelezyaka.jsp;
+package kz.zhelezyaka.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
