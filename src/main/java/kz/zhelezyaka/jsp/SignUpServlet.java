@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.List;
 
 @WebServlet("/signUp")
@@ -29,5 +29,15 @@ public class SignUpServlet extends HttpServlet {
         req.setAttribute("usersFromServer", users);
         RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher("/jsp/signUp.jsp");
         dispatcher.forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = req.getParameter("name");
+        String password = req.getParameter("password");
+        LocalDate birthDate = LocalDate.parse(req.getParameter("birthDate"));
+        User user = new User(name, password, birthDate);
+        usersRepository.save(user);
+        doGet(req, resp);
     }
 }
