@@ -2,6 +2,9 @@
 <html>
 <head>
     <title>Login</title>
+    <style>
+        <%@include file="/css/styles.css" %>
+    </style>
 </head>
 <body>
 <div class="form-style-2">
