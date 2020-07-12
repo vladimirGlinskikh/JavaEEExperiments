@@ -2,7 +2,7 @@ package kz.zhelezyaka.servlets;
 
 import kz.zhelezyaka.models.User;
 import kz.zhelezyaka.repositories.UsersRepository;
-import kz.zhelezyaka.repositories.UsersRepositoryInMemoryImpl;
+//import kz.zhelezyaka.repositories.UsersRepositoryInMemoryImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,7 +20,7 @@ public class SignUpServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        this.usersRepository = new UsersRepositoryInMemoryImpl();
+//        this.usersRepository = new UsersRepositoryInMemoryImpl();
     }
 
     @Override
@@ -36,8 +36,8 @@ public class SignUpServlet extends HttpServlet {
         String name = req.getParameter("name");
         String password = req.getParameter("password");
         LocalDate birthDate = LocalDate.parse(req.getParameter("birthDate"));
-        User user = new User(name, password, birthDate);
-        usersRepository.save(user);
+//        User user = new User(name, password, birthDate);
+//        usersRepository.save(user);
         doGet(req, resp);
     }
 }
