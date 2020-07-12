@@ -2,6 +2,7 @@ package kz.zhelezyaka.servlets;
 
 import kz.zhelezyaka.dao.UsersDao;
 import kz.zhelezyaka.dao.UsersDaoJdbcImpl;
+import kz.zhelezyaka.dao.UsersDaoJdbcTemplateImpl;
 import kz.zhelezyaka.models.User;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
@@ -38,7 +39,7 @@ public class UsersServletWithDao extends HttpServlet {
             dataSource.setUrl(dbUrl);
             dataSource.setDriverClassName(driverClassName);
 
-            usersDao = new UsersDaoJdbcImpl(dataSource);
+            usersDao = new UsersDaoJdbcTemplateImpl(dataSource);
         } catch (IOException e) {
             e.printStackTrace();
         }
