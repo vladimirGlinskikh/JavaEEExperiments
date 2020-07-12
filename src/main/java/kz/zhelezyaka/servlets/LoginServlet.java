@@ -1,7 +1,7 @@
 package kz.zhelezyaka.servlets;
 
 import kz.zhelezyaka.repositories.UsersRepository;
-import kz.zhelezyaka.repositories.UsersRepositoryInMemoryImpl;
+//import kz.zhelezyaka.repositories.UsersRepositoryInMemoryImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        this.usersRepository = new UsersRepositoryInMemoryImpl();
+//        this.usersRepository = new UsersRepositoryInMemoryImpl();
     }
 
     @Override
