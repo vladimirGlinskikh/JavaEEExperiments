@@ -48,7 +48,14 @@ public class UsersServletWithDao extends HttpServlet {
     @lombok.SneakyThrows
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<User> users = usersDao.findAll();
+        List<User> users = null;
+
+        if (req.getParameter("firstName") != null) {
+            String firstName = req.getParameter("firstName");
+            users = usersDao.findAllByFirstName(firstName);
+        } else {
+            users = usersDao.findAll();
+        }
 
         req.setAttribute("usersFromServer", users);
         req.getServletContext().getRequestDispatcher("/jsp/users.jsp").forward(req, resp);

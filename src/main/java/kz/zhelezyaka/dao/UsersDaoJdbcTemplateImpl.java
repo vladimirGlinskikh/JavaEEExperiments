@@ -17,6 +17,10 @@ public class UsersDaoJdbcTemplateImpl implements UsersDao {
     private final String SQL_SELECT_ALL =
             "SELECT * FROM fix_user";
 
+    //language=SQL
+    private final String SQL_SELECT_ALL_BY_FIRST_NAME =
+            "SELECT * FROM fix_user WHERE first_name = ?";
+
     public UsersDaoJdbcTemplateImpl(DataSource dataSource) {
         this.template = new JdbcTemplate(dataSource);
     }
@@ -30,7 +34,7 @@ public class UsersDaoJdbcTemplateImpl implements UsersDao {
 
     @Override
     public List<User> findAllByFirstName(String firstName) {
-        return null;
+        return template.query(SQL_SELECT_ALL_BY_FIRST_NAME, userRowMapper, firstName);
     }
 
     @Override
