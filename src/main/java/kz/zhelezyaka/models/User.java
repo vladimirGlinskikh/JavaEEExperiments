@@ -6,6 +6,7 @@ public class User {
     private int id;
     private String firstName;
     private String lastName;
+    private Integer age;
     private List<Car> cars;
 
     public User() {
@@ -51,6 +52,14 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public List<Car> getCars() {
