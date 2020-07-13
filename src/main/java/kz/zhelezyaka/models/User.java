@@ -6,9 +6,16 @@ public class User {
     private int id;
     private String firstName;
     private String lastName;
+    private Integer age;
     private List<Car> cars;
 
     public User() {
+    }
+
+    public User(String firstName, String lastName, Integer age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
     }
 
     public User(String firstName, String lastName) {
@@ -53,11 +60,30 @@ public class User {
         this.lastName = lastName;
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
     public List<Car> getCars() {
         return cars;
     }
 
     public void setCars(List<Car> cars) {
         this.cars = cars;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", cars=" + cars +
+                '}';
     }
 }
