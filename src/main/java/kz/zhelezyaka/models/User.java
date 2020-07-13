@@ -69,4 +69,15 @@ public class User {
     public void setCars(List<Car> cars) {
         this.cars = cars;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", cars=" + cars +
+                '}';
+    }
 }

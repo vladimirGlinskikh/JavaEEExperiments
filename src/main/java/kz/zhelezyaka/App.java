@@ -1,7 +1,10 @@
 package kz.zhelezyaka;
 
+import kz.zhelezyaka.models.User;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 public class App {
     public static void main(String[] args) {
@@ -15,5 +18,9 @@ public class App {
 
         configuration.addResource("User.hbm.xml");
         SessionFactory sessionFactory = configuration.buildSessionFactory();
+
+        Session session = sessionFactory.openSession();
+        User user = session.createQuery("from User user where user.id = 1", User.class).getSingleResult();
+        System.out.println(user);
     }
 }
