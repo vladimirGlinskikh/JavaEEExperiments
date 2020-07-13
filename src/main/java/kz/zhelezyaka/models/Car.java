@@ -1,8 +1,20 @@
 package kz.zhelezyaka.models;
 
+import jdk.jfr.Enabled;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "fix_car")
 public class Car {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String model;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
     private User owner;
 
     public Car() {
