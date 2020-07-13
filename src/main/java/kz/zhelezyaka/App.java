@@ -17,6 +17,7 @@ public class App {
         configuration.setProperty("hibernate.hbm2ddl.auto", "update");
 
         configuration.addResource("User.hbm.xml");
+        configuration.setProperty("hibernate.show_sql", "true");
         SessionFactory sessionFactory = configuration.buildSessionFactory();
 
         Session session = sessionFactory.openSession();
