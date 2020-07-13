@@ -1,10 +1,13 @@
 package kz.zhelezyaka;
 
+import kz.zhelezyaka.models.Car;
 import kz.zhelezyaka.models.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
@@ -17,6 +20,7 @@ public class App {
         configuration.setProperty("hibernate.hbm2ddl.auto", "update");
 
         configuration.addResource("User.hbm.xml");
+        configuration.addAnnotatedClass(Car.class);
         configuration.setProperty("hibernate.show_sql", "true");
         SessionFactory sessionFactory = configuration.buildSessionFactory();
 
@@ -26,5 +30,8 @@ public class App {
         session.save(new User("Tatiana", "Lozova", 34));
         session.getTransaction().commit();
         System.out.println(user);
+
+        List<Car> car = session.createQuery("from Car car", Car.class).getResultList();
+        int i = 0;
     }
 }
