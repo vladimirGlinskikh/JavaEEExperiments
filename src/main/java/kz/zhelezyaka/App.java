@@ -21,6 +21,9 @@ public class App {
 
         Session session = sessionFactory.openSession();
         User user = session.createQuery("from User user where user.id = 1", User.class).getSingleResult();
+        session.beginTransaction();
+        session.save(new User("Tatiana", "Lozova", 34));
+        session.getTransaction().commit();
         System.out.println(user);
     }
 }
