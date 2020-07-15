@@ -8,4 +8,12 @@ public class Human {
         this.age = 32;
         this.name = "DEFAULT_NAME";
     }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
