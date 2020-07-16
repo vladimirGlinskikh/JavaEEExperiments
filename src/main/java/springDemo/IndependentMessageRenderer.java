@@ -1,11 +1,10 @@
 package springDemo;
 
-public class IndependentMessageRenderer {
-    private MessageRenderer renderer;
+import org.springframework.beans.factory.annotation.Autowired;
 
-    public IndependentMessageRenderer(MessageRenderer renderer) {
-        this.renderer = renderer;
-    }
+public class IndependentMessageRenderer {
+    @Autowired
+    private MessageRenderer renderer;
 
     public void print() {
         renderer.printMessage();
