@@ -1,7 +1,13 @@
 package springDemo;
 
 public class MessageRenderer {
-    public void printMessage(){
-        System.out.println("Spring in Action");
+    private String text;
+
+    public MessageRenderer(String text) {
+        this.text = text;
+    }
+
+    public void printMessage() {
+        System.out.println(text);
     }
 }
