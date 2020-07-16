@@ -3,10 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="renderer" class="springDemo.MessageRendererErrorImpl">
-        <constructor-arg name="message" ref="message"></constructor-arg>
+    <bean id="independentRenderer" class="springDemo.IndependentMessageRenderer">
+        <constructor-arg name="renderer" ref="renderer"/>
     </bean>
-    <bean id="message" class="springDemo.ByeMessage">
-        <constructor-arg name="text" value="Spring"></constructor-arg>
+    <bean id="renderer" class="springDemo.MessageRendererErrorImpl">
+        <constructor-arg name="message" ref="message"/>
+    </bean>
+    <bean id="message" class="springDemo.HelloMessage">
+        <constructor-arg name="text" value="Spring"/>
     </bean>
 </beans>
