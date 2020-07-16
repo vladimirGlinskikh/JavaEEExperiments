@@ -1,13 +1,13 @@
 package springDemo;
 
 public class MessageRenderer {
-    private String text;
+    private Message message;
 
-    public MessageRenderer(String text) {
-        this.text = text;
+    public MessageRenderer(Message message) {
+        this.message = message;
     }
 
     public void printMessage() {
-        System.out.println(text);
+        System.out.println(message.getText());
     }
 }

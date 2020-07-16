@@ -3,7 +3,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="messageRenderer" class="springDemo.MessageRenderer">
-        <constructor-arg name="text" value="Hi Spring Bean from constructor"/>
+    <bean id="renderer" class="springDemo.MessageRenderer">
+        <constructor-arg name="message" ref="message"></constructor-arg>
+    </bean>
+    <bean id="message" class="springDemo.ByeMessage">
+        <constructor-arg name="text" value="Spring"></constructor-arg>
     </bean>
 </beans>
