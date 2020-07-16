@@ -1,4 +1,4 @@
-package springDemo;
+package springDemoWithConfigXML;
 
 public class MessageRendererStandardImpl implements MessageRenderer {
     private Message message;

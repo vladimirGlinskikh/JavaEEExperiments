@@ -4,12 +4,12 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="springDemo"/>
-    <bean id="independentRenderer" class="springDemo.IndependentMessageRenderer"/>
-    <bean id="renderer" class="springDemo.MessageRendererErrorImpl">
-        <constructor-arg name="message" ref="message"/>
-    </bean>
-    <bean id="message" class="springDemo.HelloMessage">
-        <constructor-arg name="text" value="Spring"/>
-    </bean>
+<!--    <context:component-scan base-package="springDemoWithConfigXML"/>-->
+<!--    <bean id="independentRenderer" class="springDemoWithConfigXML.IndependentMessageRenderer"/>-->
+<!--    <bean id="renderer" class="springDemoWithConfigXML.MessageRendererErrorImpl">-->
+<!--        <constructor-arg name="message" ref="message"/>-->
+<!--    </bean>-->
+<!--    <bean id="message" class="springDemoWithConfigXML.HelloMessage">-->
+<!--        <constructor-arg name="text" value="Spring"/>-->
+<!--    </bean>-->
 </beans>

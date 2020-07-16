@@ -1,4 +1,4 @@
-package springDemo;
+package springDemoWithConfigXML;
 
 public class ByeMessage implements Message {
     private String text;

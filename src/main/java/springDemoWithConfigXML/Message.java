@@ -1,4 +1,4 @@
-package springDemo;
+package springDemoWithConfigXML;
 
 public interface Message {
     String getText();
