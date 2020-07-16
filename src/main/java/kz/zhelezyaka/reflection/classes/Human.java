@@ -9,6 +9,11 @@ public class Human {
         this.name = "DEFAULT_NAME";
     }
 
+    public Human(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "Human{" +
